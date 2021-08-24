@@ -21,7 +21,7 @@
         {
           if (array[j] > array[j + 1])
           {
-            // could make a function for this
+            /* could make a function for this */
             temp = array[j];
             array[j] = array[j + 1];
             array[j + 1] = temp;
