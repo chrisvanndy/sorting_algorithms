@@ -4,7 +4,6 @@
 
 void quick_sort(int *array, size_t size)
 {
-    size_t arrlen = sizeof(array) / sizeof(size);
     if (!array)
         return;
     
