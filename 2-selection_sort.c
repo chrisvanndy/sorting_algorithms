@@ -4,23 +4,26 @@
 
 void selection_sort(int *array, size_t size)
 {
-	size_t min;
-    /* size_t min2; */
+	size_t pos;
+    /* size_t temp; */
 	size_t i, j;
 
 	for (i = 0; i < size-1; i++)
 	{
-		min = i;
+		pos = i;
 		for (j = i + 1; j < size; j++)
 		{
-			if(array[j] < array[min])
+
+			if(array[j] < array[pos])
 			{
-                min = j;
-			    /* min2 = j; */
-				swap(&array[min], &array[i]);
+                pos = j;
 			}
 		}
-        print_array(array, size);
+        if (pos != i)
+        {
+            swap(&array[pos], &array[i]);
+            print_array(array, size);
+        }
 	}
     
 }
