@@ -22,7 +22,8 @@ int partition(int *arr, int l, int r)
 {
     int pivot = arr[r];
     int i = l;
-    for (int j = l; j < r; ++j) {
+    int j;
+    for (j = l; j < r; ++j) {
         if (arr[j] < pivot) {
             swap(&arr[i], &arr[j]);
             ++i;
@@ -36,10 +37,11 @@ int partition(int *arr, int l, int r)
 
 void quicksort(int *arr, int l, int r)
 {
+    int i;
     if (l >= r)
         return;
 
-    int i = partition(arr, l, r);
+    i = partition(arr, l, r);
 
     quicksort(arr, l, i - 1);
     quicksort(arr, i + 1, r);
