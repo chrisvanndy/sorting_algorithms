@@ -3,10 +3,10 @@
 #include <stdlib.h>
 
 /**
- * insertion_sort_list - 
- * 
+ * insertion_sort_list - sorting algorithm using insertion sort
+ * @list: list to sort
+ * Return: returns void
  */
-
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *current = NULL, *next = NULL;
@@ -16,22 +16,22 @@ void insertion_sort_list(listint_t **list)
 		return;
 	}
 
-  current = *list;
+	current = *list;
 
-  while (current != NULL && current->next != NULL)
-  {
+	while (current != NULL && current->next != NULL)
+	{
 	next = current->next;
 
 	if (current->n > next->n)
 	{
-		if(next->next)
+		if (next->next)
 			next->next->prev = current;
 
 		next->prev = current->prev;
 
 		if (current->prev)
 			current->prev->next = next;
-		else 
+		else
 			*list = next;
 
 		current->prev = next;
@@ -39,11 +39,8 @@ void insertion_sort_list(listint_t **list)
 		next->next = current;
 		print_list(*list);
 		current = *list;
-
 	}
 	else
 		current = current->next;
-  }
-
-
+	}
 }
